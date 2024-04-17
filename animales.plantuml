@@ -1,0 +1,39 @@
+@startuml animales
+
+class Animal 
+cLass Persona
+class Mascota 
+class Propietario
+class Tienda_mascotas 
+
+Persona <|-- Propietario
+Persona : * identificacion
+Persona : * edad
+Persona : * name
+
+Animal <|-- Mascota
+Animal : *nombre
+Animal : *raza
+
+Mascota : pasear()
+Mascota : alimentar()
+Mascota --o Tienda_mascotas
+Mascota *-- Propietario
+Mascota <|-- Perro
+Mascota <|-- Gato
+Mascota <|-- Loro
+Mascota <|-- Pez
+
+Tienda_mascotas : *Dueño
+Tienda_mascotas : vender_mascotas()
+Tienda_mascotas : vender_productos_animales()
+
+Productos --o Tienda_mascotas
+Productos : *caducidad
+Productos : *empresa
+Productos : *nombre
+Productos : *precio
+
+Propietario : adoptar_mascota()
+
+@enduml 
